@@ -524,4 +524,8 @@ if window?
   window.Stomp = Stomp
 # or in the current object (e.g. a WebWorker)
 else if not exports?
+  Stomp.setInterval= (interval, f) ->
+    self.setInterval f, interval
+  Stomp.clearInterval= (id) ->
+    self.clearInterval id
   self.Stomp = Stomp
